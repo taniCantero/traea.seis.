@@ -60,7 +60,7 @@ RSpec.describe Cart do
       expect(seller.wallet.balance == total_amount).to eq true 
     end
     it "カートの中身（Cart#items）のすべてのアイテムのオーナー権限が、カートのオーナーに移されること" do
-      items = cart.items
+      items = cart.items.map{|item| ObjectSpace._id2ref(item.object_id) }
       cart.check_out
       expect(items.all?{|item| item.owner == customer }).to eq true
     end
