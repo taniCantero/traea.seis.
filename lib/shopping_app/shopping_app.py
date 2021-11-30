@@ -25,7 +25,7 @@ print("🛍️ ショッピングを開始します")
 end_shopping = False
 while not end_shopping:
     print("📜 商品リスト")
-    seller.items_list()
+    seller.show_items()
 
     print("️️⛏ 商品番号を入力してください")
     number = int(input())
@@ -37,7 +37,7 @@ while not end_shopping:
     for item in items:
         customer.cart.add(item)
     print("🛒 カートの中身")
-    customer.cart.items_list()
+    customer.cart.show_items()
     print(f"🤑 合計金額: {customer.cart.total_amount()}")
 
     print("😭 買い物を終了しますか？(yes/no)")
@@ -49,15 +49,15 @@ if input() == "yes":
 
 print("୨୧┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈結果┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈୨୧")
 print(f"️🛍️ ️{customer.name}の所有物")
-customer.items_list()
+customer.show_items()
 print(f"😱👛 {customer.name}のウォレット残高: {customer.wallet.balance}")
 
 print(f"📦 {seller.name}の在庫状況")
-seller.items_list()
+seller.show_items()
 print(f"😻👛 {seller.name}のウォレット残高: {seller.wallet.balance}")
 
 print("🛒 カートの中身")
-customer.cart.items_list()
+customer.cart.show_items()
 print(f"🌚 合計金額: {customer.cart.total_amount()}")
 
 print("🎉 終了")
